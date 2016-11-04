@@ -1,8 +1,19 @@
 BEGIN_PROLOG
 
-pizero_myfilter:
+myfilter:
 { 
-    module_type:                "MyPi0Filter"
+    module_type:                "MyFilter"
+
+    InteractionType: 1001
+    DetectorHalfLengthX: 256.35
+    DetectorHalfLengthY: 233.
+    DetectorHalfLengthZ: 1036.8
+    CoordinateOffsetX: 0.
+    CoordinateOffsetY: 116.5
+    CoordinateOffsetZ: 0.
+    SelectedBorderX: 10.
+    SelectedBorderY: 20.
+    SelectedBorderZ: 10.    
 
 }
 
