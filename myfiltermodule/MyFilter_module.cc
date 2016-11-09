@@ -13,7 +13,7 @@
 #include "art/Framework/Principal/Handle.h"
 #include "art/Framework/Principal/Run.h"
 #include "art/Framework/Principal/SubRun.h"
-#include "canvas/Utilities/InputTag.h"
+#include "art/Utilities/InputTag.h"
 #include "fhiclcpp/ParameterSet.h"
 #include "messagefacility/MessageLogger/MessageLogger.h"
 #include "art/Framework/Services/Registry/ServiceHandle.h"
@@ -21,12 +21,10 @@
 
 #include <memory>
 
-#include "nusimdata/SimulationBase/MCParticle.h"
-#include "nusimdata/SimulationBase/MCTruth.h"
-#include "nusimdata/SimulationBase/MCTrajectory.h"
-#include "lardataobj/RecoBase/OpFlash.h"
+#include "SimulationBase/MCParticle.h"
+#include "SimulationBase/MCTruth.h"
+#include "SimulationBase/MCTrajectory.h"
 #include "larcore/Geometry/Geometry.h"
-#include "lardataobj/RawData/TriggerData.h"
 
 
 class MyFilter;

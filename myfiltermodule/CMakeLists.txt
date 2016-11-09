@@ -20,7 +20,6 @@ art_make(
                         ${ROOT_GDML}
                         ${ROOT_BASIC_LIB_LIST}
 			${SIMULATIONBASE}
-			nusimdata_SimulationBase
 )											   
 
 install_headers()
