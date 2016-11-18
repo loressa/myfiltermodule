@@ -24,7 +24,7 @@
 #include "SimulationBase/MCParticle.h"
 #include "SimulationBase/MCTruth.h"
 #include "SimulationBase/MCTrajectory.h"
-#include "larcore/Geometry/Geometry.h"
+#include "Geometry/Geometry.h"
 
 
 class MyFilter;
