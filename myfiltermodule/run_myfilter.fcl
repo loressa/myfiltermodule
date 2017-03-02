@@ -1,7 +1,7 @@
 #include "services_microboone.fcl"
 #include "myfilter.fcl"
 
-process_name: MyPi0Filter      #The process name must NOT contain any underscores
+process_name: MyFilter      #The process name must NOT contain any underscores
 
 source: 
 {
@@ -12,7 +12,7 @@ source:
 services: {
 
   scheduler:               { defaultExceptions: false }    # Make all uncaught exceptions fatal.
-  TFileService: { fileName: "MyPi0Filter.root" }
+  TFileService: { fileName: "MyFilter.root" }
   Timing:       {}
   SimpleMemoryCheck:     { ignoreTotal: 1 }     #default is one
   RandomNumberGenerator: {}                     #ART native random number generator
@@ -48,8 +48,8 @@ physics: {
   }
 
   filters: {
-         myfilter: { module_type: MyPi0Filter}	
-	#myfilter: @local::myfilter
+         #myfilter: { module_type: MyFilter}	
+	myfilter: @local::myfilter
 
      # ParameterSets for zero or more filter modules
   }
@@ -72,7 +72,7 @@ physics: {
 
 outputs: {
     out0: { module_type: RootOutput
-            fileName: "output_file_reco12.root"
+            fileName: "filtered_events_ccqel.root"
             SelectEvents: { SelectEvents: [ path0 ] }
             compressionLevel: 1
             }
