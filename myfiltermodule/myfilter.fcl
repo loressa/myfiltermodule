@@ -2,19 +2,18 @@ BEGIN_PROLOG
 
 myfilter:
 { 
-    module_type:                "MyFilter"
+    module_type:         "MyFilter"
 
-    InteractionType: 1001
+#   InteractionType:     1001
     DetectorHalfLengthX: 256.35
     DetectorHalfLengthY: 233.
     DetectorHalfLengthZ: 1036.8
-    CoordinateOffsetX: 0.
-    CoordinateOffsetY: 116.5
-    CoordinateOffsetZ: 0.
-    SelectedBorderX: 10.
-    SelectedBorderY: 20.
-    SelectedBorderZ: 10.    
-
+    CoordinateOffsetX:   0.
+    CoordinateOffsetY:   116.5
+    CoordinateOffsetZ:   0.
+    SelectedBorderX:     10.
+    SelectedBorderY:     20.
+    SelectedBorderZ:     10.    
 }
 
 END_PROLOG
