@@ -1,0 +1,44 @@
+BEGIN_PROLOG
+
+myfilter:
+{ 
+    module_type: "MyFilter"
+
+#    InteractionType:     1004    
+    DetectorHalfLengthX: 256.35
+    DetectorHalfLengthY: 233.
+    DetectorHalfLengthZ: 1036.8
+    CoordinateOffsetX: 0.
+    CoordinateOffsetY: 116.5
+    CoordinateOffsetZ: 0.
+    SelectedBorderX: 10.
+    SelectedBorderY: 20.
+    SelectedBorderZ: 10.    
+}
+
+END_PROLOG
+
+
+#include "reco_uboone_mcc8_driver_common.fcl"
+
+process_name: Pndr
+
+services.DetectorClocksService.InheritClockConfig:  false
+
+physics.producers.pandoraWriter: @local::microboone_pandoraWriter 
+physics.producers.pandoraWriter.HitFinderModuleLabel: "gaushit" 
+physics.producers.pandoraWriter.BackTrackerModuleLabel: "gaushitTruthMatch"
+#physics.producers.pandoraWriter.ConfigFile: "MyPandoraSettings_Write.xml"
+
+physics.filters.myfilter: @local::myfilter
+
+services.TFileService.fileName: "reco_stage_2_hist.root"
+services.ParticleInventoryService: @local::standard_particleinventoryservice
+
+physics.reco: [ myfilter, pandoraWriter ]
+physics.trigger_paths: [ reco ]
+physics.end_paths: []
+
+outputs.out1.fileName: "%ifb_%tc_reco2.root"
+outputs.out1.dataTier: "reconstructed"
+source.inputCommands: ["keep *_*_*_*", "drop *_*_*_McRecoStage2" ]
